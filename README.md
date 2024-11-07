@@ -1,2 +1,13 @@
-# dVoteX
-dVoteX is a decentralized voting app built on the Energy Web Chain via the Volta testnet (cuz I dont have any eth). It ensures secure, transparent, and tamper-proof voting by leveraging smart contracts, making it ideal for decentralized elections and polls.
+# Sample Hardhat Project
+
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+
+Try running some of the following tasks:
+
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat ignition deploy ./ignition/modules/Lock.js
+```

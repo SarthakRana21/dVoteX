@@ -1,0 +1,26 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables file
+.env
+
+# Hardhat / Truffle artifacts and build files
+artifacts/
+build/
+
+# Volta testnet private key file (if stored locally)
+private_key.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
