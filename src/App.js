@@ -89,7 +89,6 @@ function App() {
   return (
     <div className="App">
       {isConnected ? <Connected account={account}/>: <Login connectWallet={connectMetamask} />}
-      <button onClick={getRemainingTime}>get time</button>
     </div>
   
   );
