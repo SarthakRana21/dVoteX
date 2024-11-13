@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import {ethers} from 'ethers';
-import {contractAddress, contractAbi} from './constant/constant'
 import Login from './components/Login';
 import Connected from './components/Connected';
 import ContractInstance from './components/contractInstance';
@@ -13,11 +12,16 @@ function App() {
   const [votingStatus, setVotingStatus] = useState(true)
   const [remainingTime, setRemainingTime] = useState('')
   const [candidates, setCandidates] = useState([])
+  const [number, setNumeber] = useState('')
 
-  // const contract = ContractInstance();
   useEffect( () => {
+    getCandidates()
+    getCurrentStatus()
+    getRemainingTime()
+
     if(window.ethereum) {
       window.ethereum.on('accountsChanged', handleAccountsChanged);
+
     }
     return () => {
       if(window.ethereum) {
@@ -27,33 +31,31 @@ function App() {
   }, [])
 
   async function getCandidates() {
-    const provider = new ethers.JsonRpcApiProvider(window.ethereum)
-    provider.send("eth_requestAccounts", []);
-    const signer = provider.getSigner();
-    const contractInstance = new ethers.Contract(contractAddress, contractAbi, signer)
-    const candidates = contractInstance.getAllVotesOfCandiates();
-    setCandidates(candidates);
+    const contract = await ContractInstance();
+    const candidates = await contract.getAllVotesOfCandiates();
+    const formattedCandidates = candidates.map((candidate, index) => {
+      return {
+        index: index,
+        name: candidate.name,
+        voteCount: parseInt(candidate.voteCount, 16)
+      }
+    });
+    setCandidates(formattedCandidates);
+    console.log(formattedCandidates);
   }
+  
 
   async function getCurrentStatus() {
-    const provider = new ethers.JsonRpcApiProvider(window.ethereum)
-    provider.send("eth_requestAccounts", []);
-    const signer = provider.getSigner();
-    const contractInstance = new ethers.Contract(contractAddress, contractAbi, signer)
-    const status = await contractInstance.getVotingStatus();
+    const contract = await ContractInstance();
+    const status = await contract.getVotingStatus();
     setVotingStatus(status)
-    console.log(status)
   }
 
   async function getRemainingTime() {
     const contract = await ContractInstance();
     const time = await contract.getRemainingTime();
     setRemainingTime(parseInt(time, 16));
-    console.log(contract)
-    console.log(`remaining time: ${parseInt(time, 16)}`)
   }
-  
-
 
   function handleAccountsChanged(accounts) {
     if(accounts.length > 0 && accounts !== accounts[0]){
@@ -88,7 +90,13 @@ function App() {
 
   return (
     <div className="App">
-      {isConnected ? <Connected account={account}/>: <Login connectWallet={connectMetamask} />}
+      {isConnected ? <Connected 
+        account={account}
+        candidates = {candidates}
+        remainingTime = {remainingTime}
+        number = {number}
+
+      />: <Login connectWallet={connectMetamask} />}      
     </div>
   
   );
