@@ -75,7 +75,7 @@ function App() {
     try {
       const contract = await ContractInstance();
       const status = await contract.getVotingStatus();
-      setVotingStatus(false);
+      setVotingStatus(status);
     } catch (error) {
       console.error(`Error getting current status: ${error}`);
     }
