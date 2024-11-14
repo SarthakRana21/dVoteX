@@ -20,7 +20,7 @@ const Connected = (props) => {
                     max={`${props.candidates.length-1}`}
                     ></input>
            
-            <button className="login-button" onClick={props.voteFunction}>Vote</button>
+            <button className="login-button" onClick={props.vote}>Vote</button>
 
                 </div>
             )}
