@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+project preview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://github.com/user-attachments/assets/cfbeb1c8-f7da-4b29-8106-fb841f610bed
 
-## Available Scripts
 
-In the project directory, you can run:
+# dVoteX - Decentralized Voting Application
 
-### `npm start`
+dVoteX is a secure, transparent, and decentralized voting platform built on blockchain technology. It leverages Ethereum smart contracts for transparent voting and ensures that voting data is immutable and verifiable.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Blockchain**: Ethereum (Volta Testnet)
+  - dVoteX utilizes Ethereum's smart contracts to enable secure, decentralized voting, ensuring that all votes are recorded immutably on the blockchain.
 
-### `npm test`
+- **Smart Contracts**: Solidity (Version 0.8.11)
+  - The voting logic, including vote casting, vote tallying, and election management, is implemented in Solidity smart contracts.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**: React.js (Version 18.3.1)
+  - The frontend user interface is built using React.js, allowing voters to interact seamlessly with the decentralized voting system.
 
-### `npm run build`
+- **Web3**: Ethers.js (Version 6.13.4)
+  - Ethers.js is used to interact with the Ethereum blockchain, enabling communication between the frontend and the deployed smart contracts.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Development Framework**: Hardhat (Version 2.22.15)
+  - Hardhat is used for compiling, testing, and deploying smart contracts to the Ethereum blockchain. It integrates with Solidity and provides powerful tools for development.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Testing**: Jest, React Testing Library
+  - Unit tests are written with Jest and React Testing Library to ensure the functionality of the frontend and smart contract interactions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Version Control**: GitHub
+  - The project code is hosted on GitHub, allowing for version control and collaboration.
 
-### `npm run eject`
+- **Ethereum Network**: Volta Testnet
+  - The app is deployed on the Volta Testnet to test and simulate the voting process in a decentralized environment before going live on the Ethereum mainnet.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Features
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Decentralized Voting**: No central authority controls the votes, ensuring fairness and transparency.
+- **Smart Contract Integration**: Voting process is automated and stored securely on the blockchain.
+- **Transparency**: Anyone can verify the votes in real-time.
+- **Immutable Data**: Once votes are cast, they cannot be altered or deleted, ensuring election integrity.
+- **Security**: By leveraging Ethereum’s blockchain, the app ensures that votes are secure and tamper-resistant.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How to Run Locally
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SarthakRana21/dVoteX.git
+   cd dVoteX
+   ```
 
-## Learn More
+2. Install dependencies for the frontend:
+   ```bash
+   cd dvotex-frontend
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Set up the Volta Testnet on your Ethereum wallet (Metamask recommended).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Compile and deploy the smart contracts using Hardhat:
+   ```bash
+   npx hardhat run scripts/deploy.js --network volta
+   ```
 
-### Code Splitting
+5. Start the frontend development server:
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+6. Open the application in your browser at `http://localhost:3000`.
 
-### Analyzing the Bundle Size
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature-name`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature/your-feature-name`).
+5. Create a new Pull Request.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Ethereum](https://ethereum.org)
+- [Solidity](https://soliditylang.org/)
+- [Hardhat](https://hardhat.org/)
+- [React](https://reactjs.org/)
+- [Ethers.js](https://docs.ethers.io/v6/)
+- https://github.com/syedmuhamaddanish
