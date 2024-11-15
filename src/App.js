@@ -127,7 +127,7 @@ function App() {
 
   return (
     <div className="App">
-    { votingStatus ? (isConnected ? (<Connected 
+    {/* { votingStatus ? (isConnected ? (<Connected 
                     account = {account}
                     candidates = {candidates}
                     remainingTime = {remainingTime}
@@ -138,7 +138,20 @@ function App() {
                     
                     : 
                     
-                    (<Login connectWallet = {connectMetamask}/>)) : (<h1>Voting is Finished</h1>)}
+                    (<Login connectWallet = {connectMetamask}/>)) : (<h1>Voting is Finished</h1>)} */}
+
+{(isConnected ? (<Connected 
+                    account = {account}
+                    candidates = {candidates}
+                    remainingTime = {remainingTime}
+                    number= {number}
+                    handleNumberChange = {handleNumberChange}
+                    vote = {vote}
+                    showButton = {voteStatus}/>) 
+                    
+                    : 
+                    
+                    (<Login connectWallet = {connectMetamask}/>))}
     
   </div>
   );
