@@ -5,7 +5,7 @@ node_modules/
 .env
 
 # Hardhat / Truffle artifacts and build files
-artifacts/
+
 build/
 
 # Volta testnet private key file (if stored locally)
