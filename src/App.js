@@ -70,7 +70,7 @@ function App() {
       console.error(`Error getting candidates: ${error}`);
     }
   }
-
+  console.log(candidates)
   async function getCurrentStatus() {
     try {
       const contract = await ContractInstance();
@@ -127,33 +127,21 @@ function App() {
 
   return (
     <div className="App">
-    {/* { votingStatus ? (isConnected ? (<Connected 
-                    account = {account}
-                    candidates = {candidates}
-                    remainingTime = {remainingTime}
-                    number= {number}
-                    handleNumberChange = {handleNumberChange}
-                    vote = {vote}
-                    showButton = {voteStatus}/>) 
-                    
-                    : 
-                    
-                    (<Login connectWallet = {connectMetamask}/>)) : (<h1>Voting is Finished</h1>)} */}
 
-{(isConnected ? (<Connected 
-                    account = {account}
-                    candidates = {candidates}
-                    remainingTime = {remainingTime}
-                    number= {number}
-                    handleNumberChange = {handleNumberChange}
-                    vote = {vote}
-                    showButton = {voteStatus}/>) 
-                    
-                    : 
-                    
-                    (<Login connectWallet = {connectMetamask}/>))}
-    
-  </div>
+    {(isConnected ? (<Connected 
+                        account = {account}
+                        candidates = {candidates}
+                        remainingTime = {remainingTime}
+                        number= {number}
+                        handleNumberChange = {handleNumberChange}
+                        vote = {vote}
+                        showButton = {voteStatus}/>) 
+                        
+                        : 
+                        
+                        (<Login connectWallet = {connectMetamask}/>))}
+        
+      </div>
   );
 }
 

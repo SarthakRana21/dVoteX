@@ -13,7 +13,7 @@
     "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
     "@nomicfoundation/hardhat-toolbox": "^1.0.1",
     "@nomiclabs/hardhat-ethers": "^2.2.2",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.4.5",
     "ethers": "^5.7.1",
     "hardhat": "^2.13.0"
   },
